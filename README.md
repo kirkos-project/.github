@@ -7,6 +7,13 @@
 Below is a high-level view of the pipeline. Clicking on implemented nodes will direct you to the relevant repo. 
 
 ```mermaid
+---
+config:
+  theme: 'neo'
+  look: 'handDrawn'
+  themeVariables:
+    fontFamily: '"Chalkboard SE", "Marker Felt", "Comic Sans MS", cursive'
+---
 flowchart LR;
   subgraph Ingestion["Ingestion (Not Implemented)"]
     ingestAWS["AWS Log Ingester"]
@@ -21,10 +28,12 @@ flowchart LR;
       enrichAWSBase["Base AWS Enricher"]
     end
     subgraph AzureEnrichment["Azure Enrichers"]
-      enrichAzure["Azure-specific Enrichers (To Be Implemented)"]
+      enrichAzure["Azure-specific Enrichers 
+      (To Be Implemented)"]
     end
     subgraph WinEnrichment["Windows Enrichers"]
-      enrichWin["Windows-specific Enrichers (To Be Implemented)"]
+      enrichWin["Windows-specific Enrichers 
+      (To Be Implemented)"]
     end
     subgraph CommonEnrichment["Common Enrichers"]
       enrichIP["IP Intel Enricher"]
@@ -39,10 +48,15 @@ flowchart LR;
   ingestWin-->enrichWin;
   enrichAWSBase-->enrichIP;
   enrichAzure-->enrichIP;
+  enrichWin-->enrichIP;
   ipIntel-.->enrichIP;
   enrichIP-->Detection;
   
+  %% Define a theme/style for clickable nodes.
+  classDef clickable fill:#e0f2fe,stroke:#0284c7,stroke-width:2px,color:#0369a1,font-weight:bold;
 
+  class enrichAWSBase,ipIntel,enrichIP,detSigma clickable;
+  
   %% Syntax: click NodeID "URL" "Optional Tooltip" _target
   click enrichAWSBase "https://codeberg.org/kirkos/kirkos-aws-enricher-base" _blank
   click ipIntel "https://codeberg.org/kirkos/kirkos-unified-ip-threat-db" _blank
