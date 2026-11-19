@@ -31,7 +31,7 @@ flowchart LR;
     end
   end
   subgraph Detection
-    detSigma["Sigma detection rules"]
+    detSigma["Sigma Detection Rules"]
   end
   
   ingestAWS-->enrichAWSBase;
