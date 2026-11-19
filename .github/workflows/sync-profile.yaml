@@ -26,7 +26,7 @@ jobs:
           git pull
           mkdir -p profile
           sed 's|https://codeberg.org|https://github.com|g' README.md > profile/README.md
-          rm README.md
+          git rm README.md
           git add profile/README.md
           git commit -m "chore: sync profile README from Codeberg" || exit 0
           git push origin main
