@@ -58,8 +58,8 @@ flowchart LR;
   class enrichAWSBase,ipIntel,enrichIP,detSigma clickable;
   
   %% Syntax: click NodeID "URL" "Optional Tooltip" _target
-  click enrichAWSBase "https://codeberg.org/kirkos-project/kirkos-aws-enricher-base" _blank
-  click ipIntel "https://codeberg.org/kirkos-project/kirkos-unified-ip-threat-db" _blank
-  click enrichIP "https://codeberg.org/kirkos-project/kirkos-common-enricher-ip" _blank
-  click detSigma "https://codeberg.org/kirkos-project/kirkos-sigma-rules" _blank
+  click enrichAWSBase "https://github.com/kirkos-project/kirkos-aws-enricher-base" _blank
+  click ipIntel "https://github.com/kirkos-project/kirkos-unified-ip-threat-db" _blank
+  click enrichIP "https://github.com/kirkos-project/kirkos-common-enricher-ip" _blank
+  click detSigma "https://github.com/kirkos-project/kirkos-sigma-rules" _blank
 ```
